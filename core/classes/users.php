@@ -243,14 +243,20 @@ class Users{
      * @param  [type] $gender     [description]
      * @return [type]             [description]
      */
-    public function update_answers($username,$question_1){
-        $query = $this->db->prepare('update `user_profile` set `question_1`=? where `user_name`=? ');
+    public function update_answers($username,$question_1,$question_2,$question_3,$question_4,$question_5,$question_6,$question_7){
+        $query = $this->db->prepare('update `user_profile` set `question_1`=?, `question_2`=?, `question_3`=?, `question_4`=?, `question_5`=?, `question_6`=?, `question_7`=? where `user_name`=? ');
         $query->bindValue(1,$question_1);
+        $query->bindValue(2,$question_2);
+        $query->bindValue(3,$question_3);
+        $query->bindValue(4,$question_4);
+        $query->bindValue(5,$question_5);
+        $query->bindValue(6,$question_6);
+        $query->bindValue(7,$question_7);
 /*        $query->bindValue(2,$last_name);
         $query->bindValue(3,$birth);
         $query->bindValue(4,$gender);
         $query->bindValue(5,$photopath);
-*/        $query->bindValue(2,$username);
+*/        $query->bindValue(8,$username);
         try{
 
             $query->execute();

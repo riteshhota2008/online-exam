@@ -25,6 +25,7 @@ if($general->logged_in()){
 					<li><a href="resetpass.php">Reset Password</a></li>
 					<li><a href="logout.php">Logout</a></li>
 					<li><a href="test.php">Exam Portal</a></li>
+                    <li><a href="questions.php">New Exam Portal</a></li>
 
 
 				</ul>
