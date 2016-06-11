@@ -8,31 +8,69 @@
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
 
+    <style>
+        @media only screen and (max-width: 768px)	{
+            .card {
+                display: none;
+            }
+        }
+    </style>
+
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 
 </head>
 <body>
 
-<div class="row">
+<div class="row" style="padding-top: 20px">
     <form class="col s8" action="question_check.php" method="post">
-        <div class="col s12 m4" >
+        <div class="col s12 m4" style="position: fixed;">
             <div class="card">
                 <div class="card-image">
                     <img src="images/sample-1.jpg">
-                    <span class="card-title">Card Title</span>
+                    <span class="card-title">Ritesh Hota</span>
                 </div>
                 <div class="card-content">
-                    <p>I am a very simple card. I am good at containing small bits of information.
-                        I am convenient because I require little markup to use effectively.</p>
+                    <p>Web Developer, UI/UX Designer, Entrepreneur, Open Source Developer, Perfectionist, Freelance Developer, Avid Gamer
+                    </p><br>
+                    <table class="bordered">
+                       <!-- <thead>
+                        <tr>
+                            <th data-field="id">Department</th>
+                            <th data-field="name">Year</th>
+                            <th data-field="price">Email</th>
+                            <th data-field="contact">Contact No.</th>
+                        </tr>
+                        </thead> -->
+
+                        <tbody>
+                        <tr>
+                            <hr>
+                            <td><strong>Dept.</strong> :</td>
+                            <td>CSE</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Year</strong> :</td>
+                            <td>2nd Year</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Email</strong> :</td>
+                            <td>riteshhota.2008@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Contact No.</strong> :</td>
+                            <td>9551631252</td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
-                <div class="card-action">
+                <!--<div class="card-action">
                     <a href="#">This is a link</a>
-                </div>
+                </div>-->
             </div>
         </div>
-        <div class="col s12 m8">
-            <div class="card-panel">
+        <div class="col s12 m8" style="position: relative;margin-left: 53%">
+            <div class="card-panel" style="width: 150%">
                 <span class="black-text" style="margin-left: 20px">Q.1) What is the size of boolean variable?
                 </span>
                     <div class="row" style="display: flex;margin-left: 45px;margin-top: 10px">
@@ -97,14 +135,14 @@
                     </div>
                 </div>
                 <div class="row" style="margin-left: 20px">
-                    <p>Q.5) What is the default value of int variable?</p>
+                    <p>Q.6) What is the default value of int variable?</p>
                     <div class="input-field col s7">
                         <input placeholder="Answer" id="question_6" name="question_6" type="text" class="validate" style="margin-left: 20px">
                         <label for="question_6"></label>
                     </div>
                 </div>
                 <div class="row" style="margin-left: 20px">
-                    <p>Q.5) What is the default value of int variable?</p>
+                    <p>Q.7) What is the default value of int variable?</p>
                     <div class="input-field col s7">
                         <input placeholder="Answer" id="question_7" name="question_7" type="text" class="validate" style="margin-left: 20px">
                         <label for="question_7"></label>
