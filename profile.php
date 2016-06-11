@@ -24,6 +24,7 @@ if($general->logged_in()){
 					<li><a href="edit.php">edit</a></li>
 					<li><a href="resetpass.php">Reset Password</a></li>
 					<li><a href="logout.php">Logout</a></li>
+					<li><a href="test.php">Exam Portal</a></li>
 
 
 				</ul>

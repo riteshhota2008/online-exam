@@ -230,6 +230,59 @@ class Users{
 	 * @param  [type] $newpassword [description]
 	 * @return [type]              [description]
 	 */
+
+
+
+
+    /**
+     * [updateUserData description]
+     * @param  [type] $username   [description]
+     * @param  [type] $first_name [description]
+     * @param  [type] $last_name  [description]
+     * @param  [type] $birth      [description]
+     * @param  [type] $gender     [description]
+     * @return [type]             [description]
+     */
+    public function update_answers($username,$question_1){
+        $query = $this->db->prepare('update `user_profile` set `question_1`=? where `user_name`=? ');
+        $query->bindValue(1,$question_1);
+/*        $query->bindValue(2,$last_name);
+        $query->bindValue(3,$birth);
+        $query->bindValue(4,$gender);
+        $query->bindValue(5,$photopath);
+*/        $query->bindValue(2,$username);
+        try{
+
+            $query->execute();
+
+            $rows=$query->fetchColumn();
+
+            if($rows==1){
+                return true;
+            }else{
+                return false;
+            }
+
+        } catch(PDOException $e){
+            die($e->getMessage());
+        }
+
+    }
+
+    /**
+     * [resetPassword description]
+     * @param  [type] $username    [description]
+     * @param  [type] $oldpassword [description]
+     * @param  [type] $newpassword [description]
+     * @return [type]              [description]
+     */
+
+
+
+
+
+
+
 	public function resetPassword($username,$oldpassword,$newpassword){
 		$query=$this->db->prepare('select `password` from `user` where `user_name`=?');
 		$query->bindValue(1,$username);
