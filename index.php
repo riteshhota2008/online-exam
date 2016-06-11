@@ -88,7 +88,7 @@ session_start();
 			<li><a href="register.php">Register</a></li>
 			<li><a href="login.php">Login</a></li>
 		</ul>
-		<h1>Welcome to Ashish's site!</h1>
+		<h1>Welcome to Ritesh's site!</h1>
 		<?php if (isset($_GET['emailsent']) && empty($_GET['emailsent'])) {
 			echo '<h3>Please check your email for password reset link</h3>';
 		}?>
