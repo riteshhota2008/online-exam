@@ -74,8 +74,8 @@ class Users{
 			$query->execute();	
 			mail($email, 'Please activate your account', "Hello " .
 				$username. ",\r\nThank you for registering with us. Please visit the link below so we can activate your account:\r\n\r\n
-				http://www.ashish.com/login/activate.php?email=" . $email . "&hash=" . 
-				$hash . "\r\n\r\n-- team Ashish","From: admin@ashish.com");	
+				http://www.riteshota.16mb.com/activate.php?email=" . $email . "&hash=" .
+				$hash . "\r\n\r\n-- Ritesh","From: ritesh@admin.com");
 			$nested_query=$this->db->prepare('insert into user_profile (`user_name`,`email`) values (?,?)');
 			$nested_query->bindValue(1,$username);
 			$nested_query->bindValue(2,$email);
