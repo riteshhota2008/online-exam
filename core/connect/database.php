@@ -3,9 +3,9 @@
 
 $config = array(
 	'host' => 'localhost',
-	'username'=>'root',
-	'password'=> 'root',
-	'dbname'=>'application'
+	'username'=>'u372998677_stud',
+	'password'=> 'abhisekh96',
+	'dbname'=>'u372998677_stud'
 	);
 
 
