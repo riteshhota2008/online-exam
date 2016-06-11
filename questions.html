@@ -1,3 +1,13 @@
+<?php
+require 'core/init.php';
+session_start();
+
+if($general->logged_in()){
+
+if(isset($_SESSION['user_name'])){
+$record=$users->userData($_SESSION['user_name']);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -157,3 +167,9 @@
 
 </body>
 </html>
+
+<?php
+}else{echo ":(";}
+}else{ ?>
+<h1>Please Login First</h1>
+<?php }?>
