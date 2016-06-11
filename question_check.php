@@ -3,16 +3,34 @@ require 'core/init.php';
 session_start();
 if(isset($_SESSION['user_name'])){$user_name=$_SESSION['user_name'];}
 
-if (isset($_POST['submit'])) {
+if (isset($_POST['submit'] )) {
 
-    if(empty($_POST['question_1'])){
+    if(empty($_POST['question_1'] || empty($_POST['question_2']) || empty($_POST['question_3'])||empty($_POST['question_4'])||empty($_POST['question_5'])||empty($_POST['question_6'])||empty($_POST['question_7']))){
 
         $errors_new[] = 'All fields are required.';
 
 
     }else{
 
-        if (!ctype_alpha($_POST['question_1'])){
+        if (!ctype_alnum($_POST['question_1'])){
+            $errors_new[] = 'The first name should not contain number/s';
+        }
+        if (!ctype_alnum($_POST['question_2'])){
+            $errors_new[] = 'The first name should not contain number/s';
+        }
+        if (!ctype_alnum($_POST['question_3'])){
+            $errors_new[] = 'The first name should not contain number/s';
+        }
+        if (!ctype_alnum($_POST['question_4'])){
+            $errors_new[] = 'The first name should not contain number/s';
+        }
+        if (!ctype_alnum($_POST['question_5'])){
+            $errors_new[] = 'The first name should not contain number/s';
+        }
+        if (!ctype_alnum($_POST['question_6'])){
+            $errors_new[] = 'The first name should not contain number/s';
+        }
+        if (!ctype_alnum($_POST['question_7'])){
             $errors_new[] = 'The first name should not contain number/s';
         }
 /*        if (!ctype_alpha($_POST['last_name'])){
@@ -62,7 +80,7 @@ if (isset($_POST['submit'])) {
     }
 
     if(empty($errors_new) === true){
-        $users->update_answers($user_name,$_POST['question_1']);
+        $users->update_answers($user_name,$_POST['question_1'],$_POST['question_2'],$_POST['question_3'],$_POST['question_4'],$_POST['question_5'],$_POST['question_6'],$_POST['question_7']);
         header('Location: profile.php?successvalid');
         exit();
     }
