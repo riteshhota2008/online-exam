@@ -45,6 +45,64 @@ if (empty($_POST) === false) {
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="css/bootstrap.min.css" >
 
+    <style>
+
+        body{
+            background: url('images/GSC.png') no-repeat top center;
+            background-size: 50%;
+            background-position: 1% 30%;
+            background-position-y: 50px;
+        }
+
+        @font-face{
+
+        }
+
+        .container {
+            margin-left: 58%;
+            width: 41%;
+            margin-top: 40px;
+            height: 569px;
+            border-left: 1px solid #d6d6d6;
+        }
+
+        .container2{
+            width: 80%;
+            float: right;
+            margin-top: 150px;
+        }
+
+        /*input{
+            margin-top:8px;
+        }*/
+
+
+        h1{
+            /*font-family: 'Segoe UI Light';*/
+            font-weight: 200;
+            font-style: normal;
+            font-size: 2.15em;
+        }
+
+        .h1_pos{
+            margin-top:-50px;
+        }
+
+        .about_pos {
+            margin-top: 200px;
+            margin-left: 180px;
+        }
+
+        .panel {
+            -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+            box-shadow: 0 1px 2px rgba(0,0,0,.05);
+            -webkit-box-shadow: 0px -1px 20px 0px rgba(50, 50, 50, 0.48);
+            -moz-box-shadow: 0px -1px 20px 0px rgba(50, 50, 50, 0.48);
+            box-shadow: 0px -1px 20px 0px rgba(50, 50, 50, 0.48);
+        }
+
+    </style>
+
 
 
 	<title>Login and registration</title>
@@ -105,11 +163,31 @@ if (empty($_POST) === false) {
 	</div><!-- /.container-fluid -->
 </nav>
 
+
+<div class="container">
+    <div class="container2" style="padding-right: 50px;">
+        <div class="h1_pos">
+            <h1>Login for Exam Portal!</h1>
+        </div><br><br><br>
+        <form method="post">
+            <input type="text" class="form-control" name="username" placeholder="Username" title="Enter username here" /><br>
+            <input type="password" class="form-control" name="password" placeholder="Password" title="Enter username here" /><br>
+            <input type="checkbox" name="loggedin" value="true">&nbsp Keep me logged in<br>
+            <input type="submit" href="#" class="btn btn-default" name="submit" value="Sign in" style="float: right;"/>
+            <div class="about_pos">
+                <!-- <a href="AboutManagement.php" style="text-decoration:none; color: silver">About management</a> -->
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--
 <div class="container">
 	<div class="jumbotron" style="margin-top: 20px">
 		<h1>Welcome to Online Exam Portal!</h1><br>
 		<!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>-->
-	</div>
+<!--	</div>
+-->
 
  
 		<?php if(empty($errors) === false){
@@ -118,6 +196,7 @@ if (empty($_POST) === false) {
  
 		} 
 		?>
+<!--
 		<form method="post" action="">
 			<h4>Username:</h4>
 			<input type="text" name="username">
@@ -128,6 +207,7 @@ if (empty($_POST) === false) {
 			<input type="submit" name="submit">
 		</form>
 </div>
+-->
 
 <!-- jQuery -->
 <script src="js/jquery.js"></script>
