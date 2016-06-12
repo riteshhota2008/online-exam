@@ -89,8 +89,8 @@ if (empty($_POST) === false) {
         }
 
         .about_pos {
-            margin-top: 200px;
-            margin-left: 180px;
+            margin-top: 20px;
+            margin-left: 250px;
         }
 
         .panel {
@@ -173,10 +173,10 @@ if (empty($_POST) === false) {
             <input type="text" class="form-control" name="username" placeholder="Username" title="Enter username here" /><br>
             <input type="password" class="form-control" name="password" placeholder="Password" title="Enter username here" /><br>
             <input type="checkbox" name="loggedin" value="true">&nbsp Keep me logged in<br>
-            <input type="submit" href="#" class="btn btn-default" name="submit" value="Sign in" style="float: right;"/>
             <div class="about_pos">
-                <!-- <a href="AboutManagement.php" style="text-decoration:none; color: silver">About management</a> -->
-            </div>
+                <a href="forgotpass.php" style="text-decoration:none; color: silver;margin-left: 10px">Forgot password?</a>
+            </div><br>
+            <input type="submit" href="#" class="btn btn-default" name="btn_log" value="Sign in" style="float: right;"/>
         </form>
     </div>
 </div>
