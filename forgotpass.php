@@ -61,15 +61,16 @@ if(isset($_POST['submit'])){
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>-->
 			<ul class="nav navbar-nav navbar-right">
-				<!--<li><a href="login.php">Login</a></li>-->
-				<li class="dropdown">
+				<li><a href="login.php">Log in</a></li>
+                <li><a href="login.php">Register</a></li>
+				<!--<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="profile.php">Profile</a></li>
 						<li role="separator" class="divider"></li>
 						<li><a href="logout.php">Log out</a></li>
 					</ul>
-				</li>
+				</li>-->
 			</ul>
 		</div><!-- /.navbar-collapse -->
 	</div><!-- /.container-fluid -->
@@ -103,5 +104,13 @@ if(isset($_POST['submit'])){
 		</table>
 	</form>
 -->
+
+
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
 </body>
 </html>
