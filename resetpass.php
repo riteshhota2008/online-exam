@@ -101,11 +101,11 @@ if($general->logged_in()){?>
 <div class="container">
 	<div class="jumbotron" style="margin-top: 20px">
 		<h1>Change Password!</h1><br>
-		<form method="post" action="">
-			<input type="password" name="old_password" placeholder="Old password"><br>
-			<input type="password" name="new_password" placeholder="New password"><br>
-			<input type="password" name="re_password" placeholder="Confirm password"><br>
-			<input type="submit" name="submit">
+		<form method="post" action="" style="width: 30%">
+			<input type="password" class="form-control" name="old_password" placeholder="Old password"><br>
+			<input type="password" class="form-control" name="new_password" placeholder="New password"><br>
+			<input type="password" class="form-control" name="re_password" placeholder="Confirm password"><br>
+			<input type="submit" href="#" class="btn btn-default" name="submit" style="float: right;">
         </form>
 		<!--<p><a class="btn btn-primary btn-lg" href="profile.php" role="button">Profile</a></p>-->
 	</div>
@@ -131,6 +131,14 @@ if($general->logged_in()){?>
 		</table>
 	</form>
 -->
+
+
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
 </body>
 </html>
 <?php 
