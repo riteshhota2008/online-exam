@@ -184,8 +184,7 @@ if($general->logged_in()){
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="profile.php">Profile</a></li>
-                                <li><a href="resetpass.php">Reset Password</a></li>
-                                <li><a href="forgotpass.php">Forgot Password</a></li>
+                                <li><a href="resetpass.php">Change Password</a></li>
                                 <li><a href="logout.php">Log out</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="questions.php">Exam Portal</a></li>
