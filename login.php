@@ -90,7 +90,7 @@ if (empty($_POST) === false) {
 
         .about_pos {
             margin-top: 20px;
-            margin-left: 250px;
+            margin-left: 220px;
         }
 
         .panel {
