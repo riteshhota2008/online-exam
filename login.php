@@ -124,7 +124,7 @@ if (empty($_POST) === false) {
 			<h4>Password:</h4>
 			<input type="password" name="password">
 			<br>
-			<input type="checkbox" name="loggedin" value="true">&nbsp keep me logged in</br>
+			<input type="checkbox" name="loggedin" value="true">&nbsp Keep me logged in</br>
 			<input type="submit" name="submit">
 		</form>
 </div>
