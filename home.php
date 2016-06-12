@@ -71,7 +71,7 @@ $username 	= $user['first_name'];
 <div class="container">
     <div class="jumbotron" style="margin-top: 20px">
         <h1>Hello! <?php echo $username; ?></h1><br>
-        <p>Welcome to Exam Portal!</p>
+        <h3>Welcome to Exam Portal!</h3><br>
          <p><a class="btn btn-primary btn-lg" href="profile.php" role="button">Profile</a></p>
     </div>
 </div>
