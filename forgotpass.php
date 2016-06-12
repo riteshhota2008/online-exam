@@ -81,7 +81,7 @@ if(isset($_POST['submit'])){
 		<h1>Forgot Password!</h1><br>
         <h2 style="color: #696969">Please enter your username</h2><br>
 		<form method="post" action="" style="width: 30%">
-			<input type="password" class="form-control" name="user_name" placeholder="Username"><br>
+			<input type="text" class="form-control" name="user_name" placeholder="Username"><br>
 			<input type="submit" href="#" class="btn btn-default" name="submit" style="float: right;">
 		</form>
 		<!--<p><a class="btn btn-primary btn-lg" href="profile.php" role="button">Profile</a></p>-->
