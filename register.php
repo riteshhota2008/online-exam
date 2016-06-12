@@ -160,7 +160,7 @@ if (isset($_GET['success']) && empty($_GET['success'])) {
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>-->
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="register.php">Sign up</a></li>
+                <li><a href="login.php">Login</a></li>
                 <!--<li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                     <ul class="dropdown-menu">
