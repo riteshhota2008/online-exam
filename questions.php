@@ -105,7 +105,7 @@ if($general->logged_in()){
                         <div class="row" style="margin-left: 20px">
                             <p>Q.2) What is the default value of int variable?</p>
                             <div class="input-field col s7">
-                                <input placeholder="Answer" class="validate" id="question_2" name="question_2" type="text" class="validate" style="margin-left: 20px">
+                                <input placeholder="Answer" id="question_2" name="question_2" type="text" class="validate" style="margin-left: 20px">
                                 <label for="question_2"></label>
                             </div>
                         </div>
@@ -133,28 +133,28 @@ if($general->logged_in()){
                         <div class="row" style="margin-left: 20px">
                             <p>Q.4) What is the default value of int variable?</p>
                             <div class="input-field col s7">
-                                <input placeholder="Answer" class="validate" id="question_4" name="question_4" type="text" class="validate" style="margin-left: 20px">
+                                <input placeholder="Answer" id="question_4" name="question_4" type="text" class="validate" style="margin-left: 20px">
                                 <label for="question_4"></label>
                             </div>
                         </div>
                         <div class="row" style="margin-left: 20px">
                             <p>Q.5) What is the default value of int variable?</p>
                             <div class="input-field col s7">
-                                <input placeholder="Answer" class="validate" id="question_5" name="question_5" type="text" class="validate" style="margin-left: 20px">
+                                <input placeholder="Answer" id="question_5" name="question_5" type="text" class="validate" style="margin-left: 20px">
                                 <label for="question_5"></label>
                             </div>
                         </div>
                         <div class="row" style="margin-left: 20px">
                             <p>Q.6) What is the default value of int variable?</p>
                             <div class="input-field col s7">
-                                <input placeholder="Answer" class="validate" id="question_6" name="question_6" type="text" class="validate" style="margin-left: 20px">
+                                <input placeholder="Answer" id="question_6" name="question_6" type="text" class="validate" style="margin-left: 20px">
                                 <label for="question_6"></label>
                             </div>
                         </div>
                         <div class="row" style="margin-left: 20px">
                             <p>Q.7) What is the default value of int variable?</p>
                             <div class="input-field col s7">
-                                <input placeholder="Answer" class="validate" id="question_7" name="question_7" type="text" class="validate" style="margin-left: 20px">
+                                <input placeholder="Answer" id="question_7" name="question_7" type="text" class="validate" style="margin-left: 20px">
                                 <label for="question_7"></label>
                             </div>
                         </div>
