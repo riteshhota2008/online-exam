@@ -85,7 +85,7 @@ session_start();
     </div>
 </div>
 		<?php if (isset($_GET['emailsent']) && empty($_GET['emailsent'])) {
-			echo '<h3>Please check your email for password reset link</h3>';
+			echo '<h3 style="margin-left: 50px">Please check your email for password reset link.</h3>';
 		}?>
 
 

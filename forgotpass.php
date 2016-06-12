@@ -79,7 +79,7 @@ if(isset($_POST['submit'])){
 <div class="container">
 	<div class="jumbotron" style="margin-top: 20px">
 		<h1>Forgot Password!</h1><br>
-        <h2>Please enter your username</h2>
+        <h2 style="color: #696969">Please enter your username</h2><br>
 		<form method="post" action="" style="width: 30%">
 			<input type="password" class="form-control" name="user_name" placeholder="Username"><br>
 			<input type="submit" href="#" class="btn btn-default" name="submit" style="float: right;">
