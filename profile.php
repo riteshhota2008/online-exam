@@ -1,17 +1,13 @@
+
 <?php
 require 'core/init.php';
-if (isset($_GET['successvalid']) && empty($_GET['successvalid'])) {
-	echo 'Profile edit saved successfully';
-}
-if (isset($_GET['successpass']) && empty($_GET['successpass'])) {
-	echo 'Password changed successfully';
-}
 session_start();
+
 if($general->logged_in()){
 
-	if(isset($_SESSION['user_name'])){
-		$record=$users->userData($_SESSION['user_name']);
-		?>
+    if(isset($_SESSION['user_name'])){
+        $record=$users->userData($_SESSION['user_name']);
+        ?>
 		<html>
 		<head>
 			<title>Profile</title>
@@ -240,7 +236,7 @@ if($general->logged_in()){
                         <button>create</button>
                         <p class="message">Already registered? <a href="#">Sign In</a></p>
                     </form>
-                    <form class="login-form" method="post" action="" enctype="multipart/form-data">
+                    <form class="login-form" method="post" action="validate.php" enctype="multipart/form-data">
                         <input type="text" name="first_name" placeholder="First Name"/>
                         <input type="text" name="last_name" placeholder="Last Name"/>
                         <input type="text" name="department" placeholder="Department"/>
@@ -250,7 +246,7 @@ if($general->logged_in()){
                         <textarea name="info" cols="40" rows="3" placeholder="Write something about yourself in 50 words!" maxlength="100"></textarea>
                         <label>Upload your Profile Picture</label><br><br>
                         <input type="file" name="profile_pic">
-                        <button><a href="questions.php"><span style="color: #FFFFFF">Submit</span></a></button>
+                        <input type="submit" name="submit" class="btn btn-default" value="Submit"><span style="color: #FFFFFF">Submit</span><!--</input>-->
                     </form>
                 </div>
             </div>
@@ -267,8 +263,9 @@ if($general->logged_in()){
 		</body>
 		</html>
 
-		<?php
-	}else{echo ":(";}
+
+<?php
+}else{echo ":(";}
 }else{ ?>
-<h1>Please Login First</h1>
+    <h1>Please Login First</h1>
 <?php }?>

@@ -188,6 +188,7 @@ if (isset($_GET['success']) && empty($_GET['success'])) {
             <input type="email" class="form-control" name="email" placeholder="Email" title="Enter email here" /><br>
             <input type="password" class="form-control" name="password" placeholder="Password" title="Enter password here" /><br>
             <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" title="Enter password again" /><br>
+            <input type="checkbox" class="form-control" name="tc" value="1" />"I agree terms and condition"
             <input type="submit" class="btn btn-default" name="submit" value="Sign up" style="float: right;"/>
             <div class="about_pos">
                 <!-- <a href="AboutManagement.php" style="text-decoration:none; color: silver">About management</a> -->
@@ -220,7 +221,7 @@ if (isset($_GET['success']) && empty($_GET['success'])) {
 			<br>
 			<input type="submit" name="submit" />
 		</form>
-
+-->
 
 		<?php 
 		
@@ -229,7 +230,7 @@ if (isset($_GET['success']) && empty($_GET['success'])) {
 		}
 
 		?>
-
+<!--
 	</div>
 
 -->
