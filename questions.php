@@ -37,7 +37,7 @@ if($general->logged_in()){
                 <div class="col s12 m4" style="position: fixed;">
                     <div class="card">
                         <div class="card-image">
-                            <img src="<?php echo $record['photo']?>" width="180px" height="335px" >
+                            <img src="<?php echo $record['photo']?>" width="180px" height="330px" >
                             <span class="card-title"><?php echo $record['first_name']?>&nbsp;<?php echo $record['last_name']?> </span>
                         </div>
                         <div class="card-content">
