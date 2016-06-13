@@ -245,7 +245,7 @@ if($general->logged_in()){
                         <input type="number" name="mobile_no" placeholder="Contact No."/>
                         <textarea name="info" cols="40" rows="3" placeholder="Write something about yourself in 50 words!" maxlength="100"></textarea>
                         <label>Upload your Profile Picture</label><br><br>
-                        <input type="file" name="profile_pic">
+                        <input type="file" name="file">
                         <input type="submit" name="submit" class="btn btn-default" value="Submit"><span style="color: #FFFFFF">Submit</span><!--</input>-->
                     </form>
                 </div>

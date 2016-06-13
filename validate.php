@@ -25,11 +25,11 @@ if (isset($_POST['submit'])) {
         if (!ctype_alnum($_POST['year'])){
             $errors_new[] = 'Year should be in proper format like 2nd or 2 or II. It should not contain any special character.';
         }
-        if (!ctype_digit($_POST['mobile_no'])){
+        if (!ctype_alnum($_POST['mobile_no'])){
             $errors_new[] = 'Mobile number should not contain number/s';
         }
-        if (!ctype_alnum($_POST['info'])){
-            $errors_new[] = 'Mobile number should not contain number/s';
+/*        if (!ctype_alnum($_POST['info'])){
+            $errors_new[] = 'Your info should not contain special character';
         }
 /*		if (!preg_match('/(\d\d)-(\w+)-(\d\d\d\d)$/', $_POST['birth'])){
 			$errors_new[] = 'Plese enter date with proper format(10-june-1992)';
