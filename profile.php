@@ -233,7 +233,7 @@ if($general->logged_in()){
 -->
             <div class="login-page" style="margin-top: -70px">
                 <div class="form">
-                    <form class="register-form" method="post" action="">
+                    <form class="register-form" method="post" action="validate.php">
                         <input type="text" placeholder="name"/>
                         <input type="password" placeholder="password"/>
                         <input type="text" placeholder="email address"/>
@@ -245,7 +245,7 @@ if($general->logged_in()){
                         <input type="text" name="last_name" placeholder="Last Name"/>
                         <input type="text" name="department" placeholder="Department"/>
                         <input type="text" name="year" placeholder="Year"/>
-                        <input type="email" name="email" placeholder="Email"/>
+                       <!-- <input type="email" name="email" placeholder="Email"/> -->
                         <input type="number" name="mobile_no" placeholder="Contact No."/>
                         <textarea name="info" cols="40" rows="3" placeholder="Write something about yourself in 50 words!" maxlength="100"></textarea>
                         <label>Upload your Profile Picture</label><br><br>

@@ -76,7 +76,7 @@ class Users{
 				$username. ",\r\nThank you for registering with us. Please visit the link below so we can activate your account:\r\n\r\n
 				http://riteshhota.16mb.com/activate.php?email=" . $email . "&hash=" .
 				$hash . "\r\n\r\n-- Ritesh","From: ritesh@admin.com");
-			$nested_query=$this->db->prepare('insert into user_profile (`user_name`,`email`) values (?,?)');
+			$nested_query=$this->db->prepare('insert into profile_info (`user_name`,`email`) values (?,?)');
 			$nested_query->bindValue(1,$username);
 			$nested_query->bindValue(2,$email);
 			$nested_query->execute();
@@ -173,7 +173,7 @@ class Users{
 	 * @return [type]           [description]
 	 */
 	public function userData($username){
-		$query = $this->db->prepare("SELECT * FROM `user_profile` WHERE `user_name`= ?");
+		$query = $this->db->prepare("SELECT * FROM `profile_info` WHERE `user_name`= ?");
 		$query->bindValue(1, $username);
 
 		try{
@@ -197,14 +197,16 @@ class Users{
 	 * @param  [type] $gender     [description]
 	 * @return [type]             [description]
 	 */
-	public function updateUserData($username,$first_name,$last_name,$birth,$gender,$photopath){
-		$query = $this->db->prepare('update `user_profile` set `first_name`=?, `last_name`=?,`birth`=?,`gender`=? ,`photo`=? where `user_name`=? ');
+	public function updateUserData($username,$first_name,$last_name,$department,$year,$mobile_no,$info,$photopath){
+		$query = $this->db->prepare('update `profile_info` set `first_name`=?, `last_name`=?,`department`=?,`year`=?, `mobile_no`=?, `info`=? ,`photo`=? where `user_name`=? ');
 		$query->bindValue(1,$first_name);
 		$query->bindValue(2,$last_name);
-		$query->bindValue(3,$birth);
-		$query->bindValue(4,$gender);
-		$query->bindValue(5,$photopath);
-		$query->bindValue(6,$username);
+		$query->bindValue(3,$department);
+		$query->bindValue(4,$year);
+        $query->bindValue(5,$mobile_no);
+        $query->bindValue(6,$info);
+		$query->bindValue(7,$photopath);
+		$query->bindValue(8,$username);
 		try{
 
 			$query->execute();

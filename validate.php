@@ -5,26 +5,39 @@ if(isset($_SESSION['user_name'])){$user_name=$_SESSION['user_name'];}
 
 if (isset($_POST['submit'])) {
 
-	if(empty($_POST['first_name']) || empty($_POST['last_name']) || empty($_POST['birth'])||empty($_POST['gender'])){
+	if(empty($_POST['first_name']) || empty($_POST['last_name']) || empty($_POST['department']) || empty($_POST['year']) || empty($_POST['mobile_no']) || empty($_POST['info'])){
 
 		$errors_new[] = 'All fields are required.';
 		
 
-	}else{
+	}else
+    {
 
 		if (!ctype_alpha($_POST['first_name'])){
-			$errors_new[] = 'The first name should not contain number/s';
+			$errors_new[] = 'First name should not contain number/s';
 		}
 		if (!ctype_alpha($_POST['last_name'])){
-			$errors_new[] = 'The last name should not contain number/s';
+			$errors_new[] = 'Last name should not contain number/s';
 		}
-		if (!preg_match('/(\d\d)-(\w+)-(\d\d\d\d)$/', $_POST['birth'])){
+		if (!ctype_alpha($_POST['department'])){
+			$errors_new[] = 'Department should not contain number/s';
+		}
+        if (!ctype_alnum($_POST['year'])){
+            $errors_new[] = 'Year should be in proper format like 2nd or 2 or II. It should not contain any special character.';
+        }
+        if (!ctype_digit($_POST['mobile_no'])){
+            $errors_new[] = 'Mobile number should not contain number/s';
+        }
+        if (!ctype_alnum($_POST['info'])){
+            $errors_new[] = 'Mobile number should not contain number/s';
+        }
+/*		if (!preg_match('/(\d\d)-(\w+)-(\d\d\d\d)$/', $_POST['birth'])){
 			$errors_new[] = 'Plese enter date with proper format(10-june-1992)';
 		}
 		if (!($_POST['gender']=='male'||$_POST['gender']=='female')){
 			$errors_new[] = 'Please enter a valid gender(male/female)';
 		}
-		$allowedExts = array("gif", "jpeg", "jpg", "png");
+*/		$allowedExts = array("gif", "jpeg", "jpg", "png");
 		$temp = explode(".", $_FILES["file"]["name"]);
 		$extension = end($temp);
 		if ((($_FILES["file"]["type"] == "image/gif")
@@ -62,7 +75,7 @@ if (isset($_POST['submit'])) {
 	}
 
 	if(empty($errors_new) === true){
-		$users->updateUserData($user_name,$_POST['first_name'],$_POST['last_name'],$_POST['birth'],$_POST['gender'],$path.$_POST['first_name'].$_POST['last_name']."_".$_FILES["file"]["name"]);
+		$users->updateUserData($user_name,$_POST['first_name'],$_POST['last_name'],$_POST['department'],$_POST['year'],$_POST['mobile_no'],$_POST['info'],$path.$_POST['first_name'].$_POST['last_name']."_".$_FILES["file"]["name"]);
 		header('Location: profile.php?successvalid');
 		exit();
 	}
