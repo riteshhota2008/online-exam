@@ -37,11 +37,11 @@ if($general->logged_in()){
                 <div class="col s12 m4" style="position: fixed;">
                     <div class="card">
                         <div class="card-image">
-                            <img src="images/sample-1.jpg">
-                            <span class="card-title">Ritesh Hota</span>
+                            <img src="<?php echo $record['photo']?>" width="180px" height="335px" >
+                            <span class="card-title"><?php echo $record['first_name']?>&nbsp;<?php echo $record['last_name']?> </span>
                         </div>
                         <div class="card-content">
-                            <p>Web Developer, UI/UX Designer, Entrepreneur, Open Source Developer, Perfectionist, Freelance Developer, Avid Gamer
+                            <p><?php echo $record['info']?><!--Web Developer, UI/UX Designer, Entrepreneur, Open Source Developer, Perfectionist, Freelance Developer, Avid Gamer-->
                             </p><br>
                             <table class="bordered">
                                 <!-- <thead>
@@ -57,19 +57,19 @@ if($general->logged_in()){
                                 <tr>
                                     <hr>
                                     <td><strong>Dept.</strong> :</td>
-                                    <td>CSE</td>
+                                    <td><?php echo $record['department']?></td>
                                 </tr>
                                 <tr>
                                     <td><strong>Year</strong> :</td>
-                                    <td>2nd Year</td>
+                                    <td><?php echo $record['year']?></td>
                                 </tr>
                                 <tr>
                                     <td><strong>Email</strong> :</td>
-                                    <td>riteshhota.2008@gmail.com</td>
+                                    <td><?php echo $record['email']?></td>
                                 </tr>
                                 <tr>
                                     <td><strong>Contact No.</strong> :</td>
-                                    <td>9551631252</td>
+                                    <td><?php echo $record['mobile_no']?></td>
                                 </tr>
                                 </tbody>
                             </table>
