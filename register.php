@@ -107,20 +107,43 @@ if (isset($_GET['success']) && empty($_GET['success'])) {
 </nav>
 
 
-<div class="container" style="margin-top: 50px">
+<div class="container" style="margin-top: 30px">
+    <h2 class="text-center">Online Exam Portal</h2><br>
     <div class="row">
-        <div class="col-md-offset-4 col-md-4 col-md-offset-4">
+        <div class="col-xs-12 col-sm-offset-4 col-sm-4 col-sm-offset-4">
             <div class="box-material">
-                <h2>Registration.</h2>
-                <form method="post" action="">
-                    <input type="text" class="form-control" name="username" placeholder="Username" title="Enter username here"/><br>
-                    <input type="email" class="form-control" name="email" placeholder="Email" title="Enter email here"/><br>
-                    <input type="password" class="form-control" name="password" placeholder="Password" title="Enter password here"/><br>
-                    <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password"
-                           title="Enter password again"/><br>
-                    <input type="checkbox" name="tc" value="1"/><label>&nbsp;&nbsp;"I agree to the Terms and Conditions"</label><br><br>
-                    <input type="submit" class="btn btn-success btn-block" name="submit" value="Sign up"/>
-                </form>
+                <div class="row">
+                    <h2 class="text-center">Registration.</h2>
+                    <form method="post" action="">
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" name="username" placeholder="Username"
+                                   title="Enter username here"/><br>
+                        </div>
+                        <div class="col-sm-12">
+                            <input type="email" class="form-control" name="email" placeholder="Email"
+                                   title="Enter email here"/><br>
+                        </div>
+                        <div class="col-sm-12">
+                            <input type="password" class="form-control" name="password" placeholder="Password"
+                                   title="Enter password here"/><br>
+                        </div>
+                        <div class="col-sm-12">
+                            <input type="password" class="form-control" name="confirm_password"
+                                   placeholder="Confirm Password"
+                                   title="Enter password again"/><br>
+                        </div>
+                        <div class="col-sm-12">
+                            <input type="checkbox" name="tc" value="1"/><label>&nbsp;&nbsp;"I agree to the Terms and
+                                Conditions"</label><br><br>
+                        </div>
+                        <div class="col-sm-12">
+                            <input type="submit" class="btn btn-success btn-block" name="submit" value="Sign up"/><br>
+                        </div>
+                        <div class="col-sm-12">
+                            <a class="pull-right" href="login.php">Already Registered? Log In.</a><br/>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

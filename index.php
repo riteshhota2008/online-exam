@@ -23,6 +23,15 @@ session_start();
             font-weight: 400;
         }
 
+        /* Box Card Design */
+        .box-material {
+            padding: 30px;
+            background-color: white;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.04);
+            border-radius: 5px;
+            border: 1px solid #e5e5e5;
+        }
+
         /* Sticky footer styles
         -------------------------------------------------- */
         html {
@@ -45,7 +54,7 @@ session_start();
 
     <title>Login and registration</title>
 </head>
-<body>
+<body style="background-color: #f9f9f9">
 
 <nav class="navbar navbar-inverse" style="border-radius: 0px">
     <div class="container-fluid">
@@ -75,7 +84,7 @@ session_start();
 </nav>
 
 <div class="container">
-    <div class="jumbotron" style="margin-top: 20px">
+    <div class="box-material" style="margin-top: 20px">
         <h2>Welcome to Online Exam Portal!</h2><br>
         <h2>Click on register or login to proceed to exam portal.</h2>
         <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>-->

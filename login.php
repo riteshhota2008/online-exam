@@ -76,7 +76,7 @@ if (empty($_POST) === false) {
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Ritesh</a>
+            <a class="navbar-brand" href="#">Exam Portal</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -85,27 +85,45 @@ if (empty($_POST) === false) {
                 <li class="active"><a href="index.php">Home <span class="sr-only">(current)</span></a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="register.php">Sign up</a></li>
+                <li><a href="register.php">Sign Up</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
 
-<div class="container" style="margin-top: 50px">
+<div class="container" style="margin-top: 30px">
+    <h2 class="text-center">Online Exam Portal</h2><br>
     <div class="row">
-        <div class="col-md-offset-4 col-md-4 col-md-offset-4">
+        <div class="col-xs-12 col-sm-offset-4 col-sm-4 col-sm-offset-4">
             <div class="box-material">
-                <h2>Login.</h2>
-                <form method="post">
-                    <input type="text" class="form-control" name="username" placeholder="Username" title="Enter username here"/><br>
-                    <input type="password" class="form-control" name="password" placeholder="Password" title="Enter password here"/><br>
-                    <input type="checkbox" name="loggedin" value="true"><label>&nbsp; Keep me logged in.</label><br>
-                    <div class="about_pos">
-                        <a href="forgotpass.php" style="text-decoration:none; color: silver;margin-left: 10px;float: right">Forgot password?</a>
-                    </div>
-                    <br><br>
-                    <input type="submit" href="#" class="btn btn-primary btn-block" name="btn_log" value="Sign in"/>
-                </form>
+                <div class="row">
+                    <h2 class="text-center">Login.</h2>
+                    <form method="post">
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" name="username" placeholder="Username"
+                                   title="Enter username here"/><br>
+                        </div>
+                        <div class="col-sm-12">
+                            <input type="password" class="form-control" name="password" placeholder="Password"
+                                   title="Enter password here"/><br>
+                        </div>
+                        <div class="col-sm-12">
+                            <input type="checkbox" name="loggedin" value="true"><label>&nbsp; Keep me logged in.</label><br>
+                        </div>
+                        <div class="col-sm-12">
+                            <a href="forgotpass.php" class="pull-right"
+                               style="text-decoration:none; color: silver;margin-left: 10px;">Forgot
+                                password?</a><br>
+                        </div>
+                        <div class="col-sm-12" style="margin-top: 10px">
+                            <input type="submit" href="#" class="btn btn-primary btn-block" name="btn_log"
+                                   value="Sign in"/><br>
+                        </div>
+                        <div class="col-sm-12">
+                            <a class="pull-right" href="register.php">Not Registered? Sign Up.</a><br/>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -124,7 +142,6 @@ if (empty($_POST) === false) {
 
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
-
 
 </body>
 </html>
