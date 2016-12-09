@@ -58,8 +58,13 @@ if (isset($_GET['success']) && empty($_GET['success'])) {
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet">
     <style>
+        h1, h2, h3, h4, h5, h6, p, a, li, ul, label, input, span {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 400;
+        }
+
         /* Box Card Design */
         .box-material {
             padding: 30px;
@@ -108,15 +113,12 @@ if (isset($_GET['success']) && empty($_GET['success'])) {
             <div class="box-material">
                 <h2>Registration.</h2>
                 <form method="post" action="">
-                    <input type="text" class="form-control" name="username" placeholder="Username"
-                           title="Enter username here"/><br>
+                    <input type="text" class="form-control" name="username" placeholder="Username" title="Enter username here"/><br>
                     <input type="email" class="form-control" name="email" placeholder="Email" title="Enter email here"/><br>
-                    <input type="password" class="form-control" name="password" placeholder="Password"
-                           title="Enter password here"/><br>
+                    <input type="password" class="form-control" name="password" placeholder="Password" title="Enter password here"/><br>
                     <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password"
                            title="Enter password again"/><br>
-                    <input type="checkbox" class="form-control" name="tc" value="1"/><label>"I agree terms and
-                        condition"</label><br><br>
+                    <input type="checkbox" name="tc" value="1"/><label>&nbsp;&nbsp;"I agree to the Terms and Conditions"</label><br><br>
                     <input type="submit" class="btn btn-success btn-block" name="submit" value="Sign up"/>
                 </form>
             </div>
@@ -132,10 +134,6 @@ if (empty($errors) === false) {
 }
 
 ?>
-<!--
-	</div>
-
--->
 
 <!-- jQuery -->
 <script src="js/jquery.js"></script>
