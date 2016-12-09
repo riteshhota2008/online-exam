@@ -1,6 +1,6 @@
 <?php
 require('core/init.php');
-if (isset($_POST['submit'])) {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (empty($_POST['username']) || empty($_POST['password']) || empty($_POST['email']) || empty($_POST['confirm_password'])) {
 
@@ -8,26 +8,37 @@ if (isset($_POST['submit'])) {
 
     } else {
 
-        $userErr = $usernameErr = $passErr = $cpassErr = $valid_emailErr = $emailErr = $tc = '';
+        $username = $email = '';
+        $userErr = $usernameErr = $passErr = $cpassErr = $valid_emailErr = $emailErr = $tc = $success = '';
         $error = 0;
+
+        $username = ((isset($_POST["username"])) ? $_POST["username"] : " ");
+        $email = ((isset($_POST["email"])) ? $_POST["email"] : " ");
 
         if ($users->user_exists($_POST['username']) === true) {
             //$errors[] = 'That username already exists';
             $userErr = 'That username already exists.';
             $error = 1;
         }
+
         if (!preg_match("/[a-zA-Z0-9-_]+/", $_POST['username'])) {
+            $usernameErr = 'The username should be at least 8 alphanumeric characters. Only this special symbols (-,_) allowed.';
+            $error = 1;
+            
+        } else if (strlen($_POST['username']) < 8) {
             //$errors[] = 'The user name should be alphanumeric characters with some special symbols (-,_).';
-            $usernameErr = 'The username should be alphanumeric characters with some special symbols (-,_).';
+            $usernameErr = 'The username should be at least 8 alphanumeric characters. Only this special symbols (-,_) allowed.';
             $error = 1;
         }
-        if (strlen($_POST['password']) < 6) {
+
+        if (strlen($_POST['password']) < 8) {
             //$errors[] = 'Your password must be at least 6 characters';
-            $passErr = 'Your password must be at least 6 characters.';
+            $passErr = 'Your password must be at least 8 characters.';
             $error = 1;
         } /*else if (strlen($_POST['password']) > 12) {
             $errors[] = 'Your password cannot be more than 12 characters long';
         }*/
+
         if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) === false) {
             //$errors[] = 'Please enter a valid email address';
             $valid_emailErr = 'Please enter a valid email address.';
@@ -43,11 +54,12 @@ if (isset($_POST['submit'])) {
             $cpassErr = 'Passwords don\'t match.';
             $error = 1;
         }
+
         if ($_POST['tc'] != "1") {
             //$errors[] = 'Please accept the terms and condition';
             $tc = 'Please accept the terms and conditions.';
+            $error = 1;
         }
-
 
     }
 
@@ -64,7 +76,8 @@ if (isset($_POST['submit'])) {
 }
 
 if (isset($_GET['success']) && empty($_GET['success'])) {
-    echo 'Thank you for registering. Please check your email.';
+    //echo 'Thank you for registering. Please check your email.';
+    $success = '<div class="alert alert-success">Thank you for registering. Please check your email.</div>';
 }
 ?>
 
@@ -73,6 +86,7 @@ if (isset($_GET['success']) && empty($_GET['success'])) {
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
@@ -81,27 +95,6 @@ if (isset($_GET['success']) && empty($_GET['success'])) {
         h1, h2, h3, h4, h5, h6, p, a, li, ul, label, input, span {
             font-family: 'Source Sans Pro', sans-serif;
             font-weight: 400;
-        }
-
-        /* Box Card Design */
-        .box-material {
-            padding: 30px;
-            background-color: white;
-            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.04);
-            border-radius: 5px;
-            border: 1px solid #e5e5e5;
-        }
-
-        .text-error {
-            color: red;
-            font-size: 2rem;
-        }
-
-        input:-webkit-autofill,
-        input:-webkit-autofill:hover,
-        input:-webkit-autofill:focus,
-        input:-webkit-autofill:active {
-            -webkit-box-shadow: 0 0 0 1000px white inset;
         }
     </style>
 
@@ -143,16 +136,27 @@ if (isset($_GET['success']) && empty($_GET['success'])) {
         <div class="col-xs-12 col-sm-offset-4 col-sm-4 col-sm-offset-4">
             <div class="box-material">
                 <div class="row">
+                    <div class="text-center">
+                        <?php echo $success; ?>
+                    </div>
                     <h2 class="text-center">Registration.</h2>
-                    <form method="post" action="">
+                    <form method="post" action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>>
                         <div class="col-sm-12">
-                            <input type="text" class="form-control" name="username" placeholder="Username"
-                                   title="Enter username here" required/>
+                            <input type="text" class="form-control" name="username"
+                                   title="Enter username here" required <?php if (isset($_POST["username"])) {
+                                echo 'value="' . $username . '"';
+                            } else {
+                                echo "placeholder='Username'";
+                            } ?>/>
                             <span class="text-error"><small><?php echo $userErr ?><?php echo $usernameErr ?></small></span><br/>
                         </div>
                         <div class="col-sm-12">
-                            <input type="email" class="form-control" name="email" placeholder="Email"
-                                   title="Enter email here" required/>
+                            <input type="email" class="form-control" name="email"
+                                   title="Enter email here" required <?php if (isset($_POST["email"])) {
+                                echo 'value="' . $email . '"';
+                            } else {
+                                echo "placeholder='Email'";
+                            } ?>/>
                             <span class="text-error"><small><?php echo $emailErr ?><?php echo $valid_emailErr ?></small></span><br/>
                         </div>
                         <div class="col-sm-12">
@@ -182,7 +186,6 @@ if (isset($_GET['success']) && empty($_GET['success'])) {
         </div>
     </div>
 </div>
-
 
 <!--<?php
 
