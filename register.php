@@ -8,35 +8,50 @@ if (isset($_POST['submit'])) {
 
     } else {
 
+        $userErr = $usernameErr = $passErr = $cpassErr = $valid_emailErr = $emailErr = $tc = '';
+        $error = 0;
 
         if ($users->user_exists($_POST['username']) === true) {
-            $errors[] = 'That username already exists';
+            //$errors[] = 'That username already exists';
+            $userErr = 'That username already exists.';
+            $error = 1;
         }
         if (!preg_match("/[a-zA-Z0-9-_]+/", $_POST['username'])) {
-            $errors[] = 'The user name should be alphanumeric characters with some special symbols (-,_).';
+            //$errors[] = 'The user name should be alphanumeric characters with some special symbols (-,_).';
+            $usernameErr = 'The username should be alphanumeric characters with some special symbols (-,_).';
+            $error = 1;
         }
         if (strlen($_POST['password']) < 6) {
-            $errors[] = 'Your password must be at least 6 characters';
-        } else if (strlen($_POST['password']) > 12) {
+            //$errors[] = 'Your password must be at least 6 characters';
+            $passErr = 'Your password must be at least 6 characters.';
+            $error = 1;
+        } /*else if (strlen($_POST['password']) > 12) {
             $errors[] = 'Your password cannot be more than 12 characters long';
-        }
+        }*/
         if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) === false) {
-            $errors[] = 'Please enter a valid email address';
+            //$errors[] = 'Please enter a valid email address';
+            $valid_emailErr = 'Please enter a valid email address.';
+            $error = 1;
         } else if ($users->email_exists($_POST['email']) === true) {
-            $errors[] = 'That email already exists.';
+            //$errors[] = 'That email already exists.';
+            $emailErr = 'That email already exists.';
+            $error = 1;
         }
 
         if ($_POST['password'] != $_POST['confirm_password']) {
-            $errors[] = 'passwords don\'t match';
+            //$errors[] = 'passwords don\'t match';
+            $cpassErr = 'Passwords don\'t match.';
+            $error = 1;
         }
         if ($_POST['tc'] != "1") {
-            $errors[] = 'Please accept the terms and condition';
+            //$errors[] = 'Please accept the terms and condition';
+            $tc = 'Please accept the terms and conditions.';
         }
 
 
     }
 
-    if (empty($errors) === true) {
+    if ($error == 0) {
 
         $username = htmlentities($_POST['username']);
         $password = $_POST['password'];
@@ -58,6 +73,9 @@ if (isset($_GET['success']) && empty($_GET['success'])) {
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet">
     <style>
         h1, h2, h3, h4, h5, h6, p, a, li, ul, label, input, span {
@@ -72,6 +90,18 @@ if (isset($_GET['success']) && empty($_GET['success'])) {
             box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.04);
             border-radius: 5px;
             border: 1px solid #e5e5e5;
+        }
+
+        .text-error {
+            color: red;
+            font-size: 2rem;
+        }
+
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 1000px white inset;
         }
     </style>
 
@@ -117,24 +147,28 @@ if (isset($_GET['success']) && empty($_GET['success'])) {
                     <form method="post" action="">
                         <div class="col-sm-12">
                             <input type="text" class="form-control" name="username" placeholder="Username"
-                                   title="Enter username here"/><br>
+                                   title="Enter username here" required/>
+                            <span class="text-error"><small><?php echo $userErr ?><?php echo $usernameErr ?></small></span><br/>
                         </div>
                         <div class="col-sm-12">
                             <input type="email" class="form-control" name="email" placeholder="Email"
-                                   title="Enter email here"/><br>
+                                   title="Enter email here" required/>
+                            <span class="text-error"><small><?php echo $emailErr ?><?php echo $valid_emailErr ?></small></span><br/>
                         </div>
                         <div class="col-sm-12">
                             <input type="password" class="form-control" name="password" placeholder="Password"
-                                   title="Enter password here"/><br>
+                                   title="Enter password here" required/>
+                            <span class="text-error"><small><?php echo $passErr ?><?php echo $cpassErr ?></small></span><br/>
                         </div>
                         <div class="col-sm-12">
                             <input type="password" class="form-control" name="confirm_password"
                                    placeholder="Confirm Password"
-                                   title="Enter password again"/><br>
+                                   title="Enter password again" required/><br>
                         </div>
                         <div class="col-sm-12">
                             <input type="checkbox" name="tc" value="1"/><label>&nbsp;&nbsp;"I agree to the Terms and
-                                Conditions"</label><br><br>
+                                Conditions."</label><br/>
+                            <span class="text-error"><small><?php echo $tc ?></small></span><br/><br/>
                         </div>
                         <div class="col-sm-12">
                             <input type="submit" class="btn btn-success btn-block" name="submit" value="Sign up"/><br>
@@ -150,13 +184,13 @@ if (isset($_GET['success']) && empty($_GET['success'])) {
 </div>
 
 
-<?php
+<!--<?php
 
 if (empty($errors) === false) {
     echo '<p>' . implode('</p><p>', $errors) . '</p>';
 }
 
-?>
+?>-->
 
 <!-- jQuery -->
 <script src="js/jquery.js"></script>
